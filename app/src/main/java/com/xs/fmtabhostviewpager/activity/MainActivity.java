@@ -1,4 +1,4 @@
-package com.xs.fmtabhostviewpager;
+package com.xs.fmtabhostviewpager.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,17 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TabHost;
-import android.widget.TabWidget;
+
+import com.xs.fmtabhostviewpager.R;
+import com.xs.fmtabhostviewpager.adapter.MyFmPagerAdapter;
+import com.xs.fmtabhostviewpager.fragment.FourFragment;
+import com.xs.fmtabhostviewpager.fragment.OneFragment;
+import com.xs.fmtabhostviewpager.fragment.ThreeFragment;
+import com.xs.fmtabhostviewpager.fragment.TwoFragment;
+import com.xs.fmtabhostviewpager.transformer.DepthPageTransformer;
+import com.xs.fmtabhostviewpager.transformer.RotateDownPageTransformer;
+import com.xs.fmtabhostviewpager.transformer.ZoomOutPageTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
         fragmentList.add(new TwoFragment());
         fragmentList.add(new ThreeFragment());
         fragmentList.add(new FourFragment());
+        mViewPager.setPageTransformer(true,new DepthPageTransformer());
+//        mViewPager.setPageTransformer(true,new RotateDownPageTransformer());
+//        mViewPager.setPageTransformer(true,new ZoomOutPageTransformer());
         mViewPager.setAdapter(new MyFmPagerAdapter(getSupportFragmentManager(),fragmentList));
     }
 

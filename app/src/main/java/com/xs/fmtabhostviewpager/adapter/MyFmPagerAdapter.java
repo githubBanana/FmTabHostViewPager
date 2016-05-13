@@ -1,4 +1,4 @@
-package com.xs.fmtabhostviewpager;
+package com.xs.fmtabhostviewpager.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
